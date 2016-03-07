@@ -29,11 +29,15 @@
                     <div class="col-sm-12">
                         <img class="img-responsive" src="img/HeaderImage.png">
                     </div>
-                    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                    <div class="nav-dropdown">
+                        <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="dropdown-content" style="display: none">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,13 +47,8 @@
             <div class="row row-offcanvas row-offcanvas-left">
 
                 <!-- sidebar -->
-                <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-                    <ul class="nav sidemenu">
-                        <li><a href="#/aboutus">About Us</a></li>
-                        <li><a href="#/whoweare">Who We Are</a></li>
-                        <li><a href="#/whatwedo">What We Do</a></li>
-                        <li><a href="#/contactus">Contact Us</a></li>
-                    </ul>
+                <div id="SideBarPlaceHolder">
+                    
                 </div>
 
                 <!-- main area -->
@@ -91,7 +90,19 @@
             window.onhashchange = locationHashChanged;
 
             $(document).ready(function () {
+                var floatingDropDownDiv = $('.dropdown-content');
                 $(".innercontent").load("views/aboutus.html");
+                $("#SideBarPlaceHolder").load("views/navmenu.html");
+                floatingDropDownDiv.load("views/hovermenu.html");
+
+                $('.navbar-toggle').click(function() {
+                    if (floatingDropDownDiv.is(':visible')) {
+                        floatingDropDownDiv.hide();
+                    }else {
+                        floatingDropDownDiv.show();
+                    }
+                    
+                });
             });
         </script>
 

@@ -283,10 +283,27 @@ body {
 }
 
 .sidemenu li{
+    background-color: #fff;
     border-style: solid !important;
     border-width: 3px !important;
     border-color: #7EC0EE !important;
     margin-bottom: 5px;
+}
+
+.hovermenu {
+    position: fixed;
+    background-color: #fff;
+    top: 87%;
+    right:5%;
+}
+
+.hovermenu li {
+    background-color: #fff;
+    border-style: solid !important;
+    border-width: 3px !important;
+    border-color: #7EC0EE !important;
+    margin-bottom: 5px;
+    
 }
 
 .sidemenu a{
@@ -302,6 +319,8 @@ body {
     font-size: 1.1em;
     margin-left: 1%;
 }
+
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
