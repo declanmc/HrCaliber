@@ -320,7 +320,17 @@ body {
     margin-left: 1%;
 }
 
+.alternatefont {
+    
+    color: gray;
+    display: inline;
+}
 
+.spacer {
+    display: inline;
+    margin-left: 15px;
+    margin-right: 15px;
+}
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
