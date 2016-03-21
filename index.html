@@ -88,10 +88,22 @@
                     $(".innercontent").load("views/aboutus.html");
                 }
 
-                $(".innercontent").load("views/" + viewName + ".html");
+                $(".innercontent").load("views/" + viewName + ".html", function() {
+                    if ($('.hovermenu li').is(':visible')) {
+                        toggleHoverMenuVisibility($('.dropdown-content'));
+                    }
+                });
             }
 
             window.onhashchange = locationHashChanged;
+
+            function toggleHoverMenuVisibility(floatingDropDownDiv) {
+                if (floatingDropDownDiv.is(':visible')) {
+                    floatingDropDownDiv.hide();
+                } else {
+                    floatingDropDownDiv.show();
+                }
+            }
 
             $(document).ready(function () {
                 var floatingDropDownDiv = $('.dropdown-content');
@@ -100,13 +112,10 @@
                 floatingDropDownDiv.load("views/hovermenu.html");
 
                 $('.navbar-toggle').click(function() {
-                    if (floatingDropDownDiv.is(':visible')) {
-                        floatingDropDownDiv.hide();
-                    }else {
-                        floatingDropDownDiv.show();
-                    }
-                    
+                    toggleHoverMenuVisibility($('.dropdown-content'));
                 });
+
+                
             });
         </script>
 
